@@ -46,6 +46,11 @@ public class GridLayout extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(TextUtils.isEmpty(txtDis.getText())){
+                    txtDis.setError("Enter a number");
+                    return;
+                }
              symbol=1;
              textOne=Integer.parseInt(txtDis.getText().toString());
              calc.setFirst(textOne);
@@ -56,6 +61,10 @@ public class GridLayout extends AppCompatActivity {
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(TextUtils.isEmpty(txtDis.getText())){
+                    txtDis.setError("Enter a number");
+                    return;
+                }
                 symbol=2;
                 textOne = Integer.parseInt(txtDis.getText().toString());
                 calc.setFirst(textOne);
@@ -67,17 +76,25 @@ public class GridLayout extends AppCompatActivity {
         btnMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(TextUtils.isEmpty(txtDis.getText())){
+                    txtDis.setError("Enter a number");
+                    return;
+                }
+
                 symbol=3;
                 textOne = Integer.parseInt(txtDis.getText().toString());
                 calc.setFirst(textOne);
                 txtDis.getText().clear();
-                textcheckSum.setText(textOne+"*");
-            }
+                textcheckSum.setText(textOne+"*");            }
         });
 
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(TextUtils.isEmpty(txtDis.getText())){
+                    txtDis.setError("Enter a number");
+                    return;
+                }
                 symbol=4;
                 textOne = Integer.parseInt(txtDis.getText().toString());
                 calc.setFirst(textOne);
